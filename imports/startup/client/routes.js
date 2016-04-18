@@ -10,6 +10,11 @@ import '../../ui/layouts/app-body.js';
 
 
 import '../../ui/pages/home.js';
+import '../../ui/pages/booking.js';
+import '../../ui/pages/orders.js';
+import '../../ui/pages/payments.js';
+import '../../ui/pages/faqs.js';
+import '../../ui/pages/settings.js';
 
 import '../../ui/pages/app-not-found.js';
 
@@ -30,7 +35,6 @@ import '../../ui/accounts/accounts-templates.js';
 //   },
 // });
 
-
 FlowRouter.route('/', {
   name: 'App.home',
   action() {
@@ -38,6 +42,37 @@ FlowRouter.route('/', {
   },
 });
 
+FlowRouter.route('/booking', {
+  name: 'booking',
+  action() {
+    BlazeLayout.render('App_body', { main: 'booking' });
+  },
+});
+FlowRouter.route('/orders', {
+  name: 'orders',
+  action() {
+    BlazeLayout.render('App_body', { main: 'orders' });
+  },
+});
+FlowRouter.route('/payments', {
+  name: 'payments',
+  action() {
+    BlazeLayout.render('App_body', { main: 'payments' });
+
+  },
+});
+FlowRouter.route('/faqs', {
+  name: 'faqs',
+  action() {
+    BlazeLayout.render('App_body', { main: 'faqs' });
+  },
+});
+FlowRouter.route('/settings', {
+  name: 'settings',
+  action() {
+    BlazeLayout.render('App_body', { main: 'settings' });
+  },
+});
 
 // the App_notFound template is used for unknown routes and missing lists
 FlowRouter.notFound = {
@@ -62,3 +97,4 @@ AccountsTemplates.configureRoute('resetPwd', {
   name: 'resetPwd',
   path: '/reset-password',
 });
+
