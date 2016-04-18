@@ -1,0 +1,107 @@
+<template name="App_body">
+  {{#HammerTouchArea gestureMap=templateGestures}}
+    <div id="container" class="{{menuOpen}} {{cordova}}">
+      <section id="menu">
+        {{#if currentUser}}
+          <div class="btns-group-vertical">
+            <a href="#" class="js-user-menu btn-secondary">
+              {{#if userMenuOpen}}
+                <span class="icon-arrow-up"></span>
+                {{else}}
+                <span class="icon-arrow-down"></span>
+              {{/if}}
+
+              {{emailLocalPart}}
+            </a>
+            {{#if userMenuOpen}}
+              <a class="js-logout btn-secondary">{{_ 'Logout'}}</a>
+            {{/if}}
+          </div>
+
+          <div class="list-todos">
+
+              <!-- FIXME seharusnya ada yang bikin class active or not kalau lagi di dalam menunya -->
+              <a href="/" title="Home" class="list-todo">
+
+              <!-- FIXME kelak mungkin dipakai kalau ada notification/hub
+
+                {{#if list.incompleteCount}}
+                  <span class="count-list">{{list.incompleteCount}}</span>
+                {{/if}}
+
+              -->
+                Home
+              </a>
+
+              <a href="/orders" title="Orders" class="list-todo">
+                Orders
+              </a>
+              <a href="/payments" title="Payments" class="list-todo">
+                Payments
+              </a>
+              <a href="/faqs" title="FAQs" class="list-todo">
+                FAQs
+              </a>
+              <a href="/settings" title="Settings" class="list-todo">
+                Settings
+              </a>
+          </div>
+
+        {{else}}
+          <div class="btns-group">
+            <a href="/signin" class="btn-secondary">{{_ 'Sign In'}}</a>
+            <a href="/join" class="btn-secondary">{{_ 'Join'}}</a>
+          </div>
+
+          <div class="list-todos">
+
+            <!-- FIXME seharusnya ada yang bikin class active or not kalau lagi di dalam menunya -->
+            <a href="/" title="Home" class="list-todo">
+
+            <!-- FIXME kelak mungkin dipakai kalau ada notification/hub
+
+              {{#if list.incompleteCount}}
+                <span class="count-list">{{list.incompleteCount}}</span>
+              {{/if}}
+
+            -->
+              Home
+            </a>
+
+            <a href="/faqs" title="FAQs" class="list-todo">
+              FAQs
+            </a>
+
+        </div>
+
+        {{/if}}
+
+
+      </section>
+
+      {{#unless connected}}
+        <div class="notifications">
+          <div class="notification">
+            <span class="icon-sync"></span>
+            <div class="meta">
+              <div class="title-notification">Trying to connect</div>
+              <div class="description">There seems to be a connection issue</div>
+            </div>
+          </div>
+        </div>
+      {{/unless}}
+
+      <div class="content-overlay"></div>
+
+      <div id="content-container">
+        {{#momentum plugin="fade"}}
+          {{#if Template.subscriptionsReady}}
+            {{> Template.dynamic template=main}}
+          {{else}}
+            {{> App_loading}}
+          {{/if}}
+        {{/momentum}}
+      </div>
+    </div>
+  {{/HammerTouchArea}}
+</template>
