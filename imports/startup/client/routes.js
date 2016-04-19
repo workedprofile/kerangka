@@ -16,6 +16,8 @@ import '../../ui/pages/payments.js';
 import '../../ui/pages/faqs.js';
 import '../../ui/pages/settings.js';
 
+import '../../ui/pages/coba.js';
+
 import '../../ui/pages/pleaseLogin.js';
 import '../../ui/pages/app-not-found.js';
 
@@ -75,6 +77,15 @@ FlowRouter.route('/settings', {
     BlazeLayout.render('App_body', { main: 'settings' });
   },
 });
+
+
+FlowRouter.route('/coba', {
+  name: 'coba',
+  action() {
+    BlazeLayout.render('App_body', { main: 'coba' });
+  },
+});
+
 
 // the App_notFound template is used for unknown routes and missing lists
 FlowRouter.notFound = {
