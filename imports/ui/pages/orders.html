@@ -1,4 +1,5 @@
 <template name="orders">
+{{#if currentUser}}
   <div class="page lists-show">
     <nav class="js-title-nav">
       {{#momentum plugin="fade"}}
@@ -54,4 +55,7 @@
 
     </div>
   </div>
+{{else}}
+  {{> pleaseLogin }}
+{{/if}}
 </template>

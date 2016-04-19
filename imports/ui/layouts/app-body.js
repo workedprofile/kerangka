@@ -42,7 +42,9 @@ Template.App_body.onCreated(function appBodyOnCreated() {
     menuOpen: false,
     userMenuOpen: false,
   });
+
 });
+
 
 Template.App_body.helpers({
   menuOpen() {

@@ -1,42 +1,62 @@
 import './booking.html';
 
-// function updateMonthYear() {
-// 	$month.html( cal.getMonthName() );
-// 	$year.html( cal.getYear() );
-// }
-
 
 Template.booking.onRendered(function() {
 
-				this.cal = $( '#calendar' ).calendario( {
-						onDayClick : function( $el, $contentEl, dateProperties ) {
+	if(Session.get('booking')){
+    					this.cal = $( '#calendar' ).calendario( {
+							onDayClick : function( $el, $contentEl, dateProperties ) {
 
-							console.log('dateProperties',dateProperties);
+								console.log('dateProperties',dateProperties);
 
-							for( var key in dateProperties ) {
-								console.log( key + ' = ' + dateProperties[ key ] );
-							}
+								for( var key in dateProperties ) {
+									console.log( key + ' = ' + dateProperties[ key ] );
+								}
 
-							var tanggal = new Date(dateProperties['year'],dateProperties['month'],dateProperties['day']);
+								var tanggal = new Date(dateProperties['year'],dateProperties['month'],dateProperties['day']);
 
-							console.log('tanggal',tanggal);
+								console.log('tanggal',tanggal);
 
 
 
-						},
-						caldata : {}
-					} );
+							},
+							caldata : {}
+						} );
 
-					this.$month = $( '#custom-month' ).html( this.cal.getMonthName() );
-					this.$year = $( '#custom-year' ).html( this.cal.getYear() );
+						this.$month = $( '#custom-month' ).html( this.cal.getMonthName() );
+						this.$year = $( '#custom-year' ).html( this.cal.getYear() );
 
+	}else{
+		setTimeout(function(){
+
+    					this.cal = $( '#calendar' ).calendario( {
+							onDayClick : function( $el, $contentEl, dateProperties ) {
+
+								console.log('dateProperties',dateProperties);
+
+								for( var key in dateProperties ) {
+									console.log( key + ' = ' + dateProperties[ key ] );
+								}
+
+								var tanggal = new Date(dateProperties['year'],dateProperties['month'],dateProperties['day']);
+
+								console.log('tanggal',tanggal);
+
+
+
+							},
+							caldata : {}
+						} );
+
+						this.$month = $( '#custom-month' ).html( this.cal.getMonthName() );
+						this.$year = $( '#custom-year' ).html( this.cal.getYear() );
+   	}, 200);
+   	Session.set('booking', true);
+	};
 
 });
 
 Template.booking.helpers({
-	goSignin(){
-		FlowRouter.go('/signin');
-	},
 
 	updateMonthYear(event, instance) {
 		$month.html( instance.cal.getMonthName() );
