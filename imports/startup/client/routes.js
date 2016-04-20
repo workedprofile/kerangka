@@ -16,6 +16,9 @@ import '../../ui/pages/payments.js';
 import '../../ui/pages/faqs.js';
 import '../../ui/pages/settings.js';
 
+import '../../ui/pages/coba.js';
+
+import '../../ui/pages/pleaseLogin.js';
 import '../../ui/pages/app-not-found.js';
 
 // Import to override accounts templates
@@ -33,7 +36,7 @@ import '../../ui/accounts/accounts-templates.js';
 //   action() {
 //     BlazeLayout.render('App_body', { main: 'app_rootRedirector' });
 //   },
-// });
+// });container
 
 FlowRouter.route('/', {
   name: 'App.home',
@@ -48,6 +51,7 @@ FlowRouter.route('/booking', {
     BlazeLayout.render('App_body', { main: 'booking' });
   },
 });
+
 FlowRouter.route('/orders', {
   name: 'orders',
   action() {
@@ -73,6 +77,15 @@ FlowRouter.route('/settings', {
     BlazeLayout.render('App_body', { main: 'settings' });
   },
 });
+
+
+FlowRouter.route('/coba', {
+  name: 'coba',
+  action() {
+    BlazeLayout.render('App_body', { main: 'coba' });
+  },
+});
+
 
 // the App_notFound template is used for unknown routes and missing lists
 FlowRouter.notFound = {
