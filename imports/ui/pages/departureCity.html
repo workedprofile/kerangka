@@ -1,0 +1,29 @@
+<template name="departureCity">
+	<div class="page lists-show">
+      <nav class="js-title-nav">
+        {{#momentum plugin="fade"}}
+
+            {{> hamburger}}
+
+            <h1 class="js-edit-list title-page">
+              <span class="title-wrapper">Departure City</span>
+            </h1>
+
+            {{> phoneComponent}}
+
+        {{/momentum}}
+      </nav>
+
+
+      <div class="content-scrollable list-items">
+
+        <div class="container" style="padding: 10px;"> 
+			{{> topSummary}}
+			<p class="text-center">Select your prefered departure time</p>
+			<button type="submit" class="btn-primary btn-standard">Jakarta</button>
+			<button type="submit" class="btn-primary btn-standard">Bandung</button>
+        </div>
+
+      </div>
+    </div>
+</template>

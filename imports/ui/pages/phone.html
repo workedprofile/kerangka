@@ -1,4 +1,4 @@
-<template name="faqs">
+<template name="phone">
   <div class="page lists-show">
     <nav class="js-title-nav">
       {{#momentum plugin="fade"}}
@@ -7,7 +7,7 @@
           
 
           <h1 class="js-edit-list title-page">
-            <img src="images/logo_hct.png" width="100" style="margin-top: 20px;">
+            <span class="title-wrapper text-uppercase" style="padding-right: 0">Urgent Call</span>
             <span class="count-list" style="display: none;">999999999999999</span><!-- FIXME kelak harus notificationCount -->
           </h1>
 
@@ -16,11 +16,6 @@
 
       {{/momentum}}
 
-
-      <form class="js-todo-new todo-new input-symbol">
-        <input type="text" placeholder={{_ 'Type to add new tasks'}}>
-        <span class="icon-add js-todo-add"></span>
-      </form>
     </nav>
 
 
@@ -37,7 +32,16 @@
         {{/each}}
       {{else}}
           <div class="wrapper-message">
-            <div class="title-message">{{_ 'Loading FAQS Empty State...'}}</div>
+            <div class="container">
+		        
+		    		<h4 class="text-center text-thin">
+						For immidiate questions or to book by phone, give us a call:<br/><br/>
+						<a href="tel:622178765643">+62 2178765643</a><br/><br/>
+						<a href="tel:622178765643">+62 2178765643</a><br/><br/>
+						<a href="tel:622178765643">+62 2178765643</a>
+					</h4>    	
+		        
+		    </div>
           </div>
       {{/if}}
 

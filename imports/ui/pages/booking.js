@@ -4,52 +4,49 @@ import './booking.html';
 Template.booking.onRendered(function() {
 
 	if(Session.get('booking')){
-    					this.cal = $( '#calendar' ).calendario( {
-							onDayClick : function( $el, $contentEl, dateProperties ) {
+		this.cal = $( '#calendar' ).calendario( {
+			onDayClick : function( $el, $contentEl, dateProperties ) {
 
-								console.log('dateProperties',dateProperties);
+				console.log('dateProperties',dateProperties);
 
-								for( var key in dateProperties ) {
-									console.log( key + ' = ' + dateProperties[ key ] );
-								}
+				for( var key in dateProperties ) {
+					console.log( key + ' = ' + dateProperties[ key ] );
+				}
 
-								var tanggal = new Date(dateProperties['year'],dateProperties['month'],dateProperties['day']);
+				var tanggal = new Date(dateProperties['year'],dateProperties['month'],dateProperties['day']);
 
-								console.log('tanggal',tanggal);
+				console.log('tanggal',tanggal);
 
+				FlowRouter.go('/bookingTime');
+			},
+			caldata : {}
+		} );
 
-
-							},
-							caldata : {}
-						} );
-
-						this.$month = $( '#custom-month' ).html( this.cal.getMonthName() );
-						this.$year = $( '#custom-year' ).html( this.cal.getYear() );
+		this.$month = $( '#custom-month' ).html( this.cal.getMonthName() );
+		this.$year = $( '#custom-year' ).html( this.cal.getYear() );
 
 	}else{
 		setTimeout(function(){
 
-    					this.cal = $( '#calendar' ).calendario( {
-							onDayClick : function( $el, $contentEl, dateProperties ) {
+			this.cal = $( '#calendar' ).calendario( {
+				onDayClick : function( $el, $contentEl, dateProperties ) {
 
-								console.log('dateProperties',dateProperties);
+					console.log('dateProperties',dateProperties);
 
-								for( var key in dateProperties ) {
-									console.log( key + ' = ' + dateProperties[ key ] );
-								}
+					for( var key in dateProperties ) {
+						console.log( key + ' = ' + dateProperties[ key ] );
+					}
 
-								var tanggal = new Date(dateProperties['year'],dateProperties['month'],dateProperties['day']);
+					var tanggal = new Date(dateProperties['year'],dateProperties['month'],dateProperties['day']);
 
-								console.log('tanggal',tanggal);
+					console.log('tanggal',tanggal);
+					FlowRouter.go('/bookingTime');
+				},
+				caldata : {}
+			} );
 
-
-
-							},
-							caldata : {}
-						} );
-
-						this.$month = $( '#custom-month' ).html( this.cal.getMonthName() );
-						this.$year = $( '#custom-year' ).html( this.cal.getYear() );
+			this.$month = $( '#custom-month' ).html( this.cal.getMonthName() );
+			this.$year = $( '#custom-year' ).html( this.cal.getYear() );
    	}, 200);
    	Session.set('booking', true);
 	};
@@ -72,6 +69,10 @@ Template.booking.events({
 
 	'click #custom-prev'(event, instance) {
 		instance.cal.gotoPreviousMonth( Template.booking.helpers.updateMonthYear );
+	},
+
+	'click #custom-current'(event, instance) {
+		instance.cal.gotoNow( Template.booking.helpers.updateMonthYear );
 	},
 
 	'click #custom-current'(event, instance) {

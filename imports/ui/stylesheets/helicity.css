@@ -1,0 +1,26 @@
+body{
+	background: #000; 
+    background: -webkit-linear-gradient(#000, #333); 
+    background: -o-linear-gradient(#000, #333); 
+    background: -moz-linear-gradient(#000, #333); 
+    background: linear-gradient(#000, #333); 
+}
+
+#content-scrollable{
+	background: #333;
+}
+
+.page.lists-show nav{
+	background: black;
+}
+
+.page.lists-show nav .title-page .title-wrapper,
+.icon-list-unordered:before,
+.icon-cog:before
+{
+	color: white;
+}
+
+[class^="btn-"][class*="secondary"], [class*=" btn-"][class*="secondary"]{
+	box-shadow: #fff 0 0 0 1px inset;
+}

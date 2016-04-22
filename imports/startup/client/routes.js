@@ -15,6 +15,14 @@ import '../../ui/pages/orders.js';
 import '../../ui/pages/payments.js';
 import '../../ui/pages/faqs.js';
 import '../../ui/pages/settings.js';
+import '../../ui/pages/phone.js';
+import '../../ui/pages/bookingTime.js';
+import '../../ui/pages/departureCity.js';
+
+// components
+import '../../ui/components/hamburger.js';
+import '../../ui/components/phoneComponent.js';
+import '../../ui/components/topSummary.js';
 
 import '../../ui/pages/coba.js';
 
@@ -52,6 +60,13 @@ FlowRouter.route('/booking', {
   },
 });
 
+FlowRouter.route('/bookingTime', {
+  name: 'bookingTime',
+  action() {
+    BlazeLayout.render('App_body', { main: 'bookingTime' });
+  },
+});
+
 FlowRouter.route('/orders', {
   name: 'orders',
   action() {
@@ -75,6 +90,20 @@ FlowRouter.route('/settings', {
   name: 'settings',
   action() {
     BlazeLayout.render('App_body', { main: 'settings' });
+  },
+});
+
+FlowRouter.route('/phone', {
+  name: 'phone',
+  action() {
+    BlazeLayout.render('App_body', { main: 'phone' });
+  },
+});
+
+FlowRouter.route('/departureCity', {
+  name: 'departureCity',
+  action() {
+    BlazeLayout.render('App_body', { main: 'departureCity' });
   },
 });
 

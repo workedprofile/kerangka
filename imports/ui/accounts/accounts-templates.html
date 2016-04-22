@@ -3,7 +3,7 @@
     <nav>
       <div class="nav-group">
         <a href="#" class="js-menu nav-item">
-          <span class="icon-list-unordered"></span>
+          <span class=""><img src="images/burger.png"></span>
         </a>
       </div>
     </nav>
@@ -36,7 +36,8 @@
 
 <template name="override-atTitle">
   <h1 class="title-auth">{{title}}</h1>
-  <p class="subtitle-auth">{{_ 'Signing in allows you to have private lists'}}</p>
+  <!-- <p class="subtitle-auth">{{_ 'Signing in allows you to have private lists'}}</p> -->
+  <p><a class="subtitle-auth" href="booking">Tap here to explore Helicity</a></p><br/>
 </template>
 
 <template name="override-atError">

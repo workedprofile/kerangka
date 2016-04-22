@@ -39,7 +39,7 @@
 		months : [ 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ],
 		monthabbrs : [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec' ],
 		// choose between values in options.weeks or options.weekabbrs
-		displayWeekAbbr : false,
+		displayWeekAbbr : true,
 		// choose between values in options.months or options.monthabbrs
 		displayMonthAbbr : false,
 		// left most day in the calendar
