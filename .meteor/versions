@@ -7,6 +7,7 @@ aldeed:schema-index@1.0.1
 aldeed:simple-schema@1.5.3
 aldeed:template-extension@4.0.0
 allow-deny@1.0.4
+andrasph:clockpicker@0.0.2
 app-prod-security@0.0.0
 arillo:flow-router-helpers@0.5.1
 autoupdate@1.2.9
@@ -39,7 +40,7 @@ ddp-server@1.2.6
 deps@1.0.12
 diff-sequence@1.0.5
 dispatch:mocha-core@0.0.1
-dispatch:mocha-phantomjs@0.0.8
+dispatch:mocha-phantomjs@0.1.0
 dispatch:phantomjs-tests@0.0.4
 ecmascript@0.4.3
 ecmascript-runtime@0.2.10

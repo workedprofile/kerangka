@@ -1,0 +1,33 @@
+<template name="bookingTime">
+  <div class="page lists-show">
+      <nav class="js-title-nav">
+        {{#momentum plugin="fade"}}
+
+            {{> hamburger}}
+
+            <h1 class="js-edit-list title-page">
+              <span class="title-wrapper">Booking Time</span>
+              <span class="count-list" style="display: none;">999</span><!-- FIXME kelak harus notificationCount -->
+            </h1>
+
+            {{> phoneComponent}}
+
+        {{/momentum}}
+      </nav>
+
+
+      <div class="content-scrollable list-items">
+
+        <div class="container" style="padding: 10px;"> 
+          {{> topSummary}}
+          <p class="text-center">Select your prefered departure time</p>
+          <input id="inputTime" type="time" value="">
+
+          <button type="submit" class="btn-primary btn-standard">
+            Confirm Date and Time
+          </button>
+        </div>
+
+      </div>
+    </div>
+</template>

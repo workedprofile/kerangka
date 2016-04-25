@@ -3,40 +3,22 @@
   <div class="page lists-show">
     <nav class="js-title-nav">
       {{#momentum plugin="fade"}}
-
-          <div class="nav-group">
-            <a href="#" class="js-menu nav-item">
-              <span class="icon-list-unordered" title={{_ 'Show Menu'}}></span>
-            </a>
-          </div>
+ 
+          {{> hamburger}}
 
           <h1 class="js-edit-list title-page">
-            <span class="title-wrapper">Home</span>
-            <span class="count-list">999999999999999</span><!-- FIXME kelak harus notificationCount -->
+            <img src="images/logo_hct.png" width="100" style="margin-top: 20px;">
+            <span class="count-list" style="display: none;">999999999999999</span><!-- FIXME kelak harus notificationCount -->
           </h1>
 
-          <div class="nav-group right">
-            <div class="nav-item options-mobile">
-              <span class="icon-cog"></span>
-            </div>
-            <div class="options-web">
-              <a class="js-delete-list nav-item">
-                <span class="icon-trash" title={{_ 'Delete list'}}></span>
-              </a>
-            </div>
-          </div>
+          {{> phoneComponent}}
 
       {{/momentum}}
 
-
-      <form class="js-todo-new todo-new input-symbol">
-        <input type="text" placeholder={{_ 'Type to add new tasks'}}>
-        <span class="icon-add js-todo-add"></span>
-      </form>
     </nav>
 
 
-    <div class="content-scrollable list-items">
+    <div class="list-items">
       <!-- FIXME taruh subscription di sini bila ada -->
       {{#if todosReady}}
         {{#each todo in todos}}
@@ -50,7 +32,13 @@
       {{else}}
           <div class="wrapper-message">
             <div class="title-message">{{_ 'Loading Empty State...'}}</div>
-            <div class="subtitle-message">{{_ 'SEHARUSNYA DI FOOTER ADA BOOK NOW'}}</div>
+            <div class="subtitle-message gap-bottom-small">
+              <h2 class="text-thin">{{_ 'Welcome to Helicity'}}</h2>
+            </div>
+
+            <!-- <button id="bookDate" type="submit" class="btn-primary">
+              {{_ 'Book Now'}}
+            </button> -->
           </div>
       {{/if}}
     </div>

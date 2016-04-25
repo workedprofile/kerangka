@@ -1,39 +1,18 @@
 <template name="booking">
-  {{#if currentUser}}
-
-    <div class="page lists-show">
+  <div class="page lists-show">
       <nav class="js-title-nav">
         {{#momentum plugin="fade"}}
 
-            <div class="nav-group">
-              <a href="#" class="js-menu nav-item">
-                <span class="icon-list-unordered" title={{_ 'Show Menu'}}></span>
-              </a>
-            </div>
+            {{> hamburger}}
 
             <h1 class="js-edit-list title-page">
-              <span class="title-wrapper">Booking</span>
-              <span class="count-list">999</span><!-- FIXME kelak harus notificationCount -->
+              <span class="title-wrapper" style="padding-right: 0">Booking Date</span>
+              <span class="count-list" style="display: none;">999</span><!-- FIXME kelak harus notificationCount -->
             </h1>
 
-            <div class="nav-group right">
-              <div class="nav-item options-mobile">
-                <span class="icon-cog"></span>
-              </div>
-              <div class="options-web">
-                <a class="js-delete-list nav-item">
-                  <span class="icon-trash" title={{_ 'Delete list'}}></span>
-                </a>
-              </div>
-            </div>
+            {{> phoneComponent}}
 
         {{/momentum}}
-
-
-        <form class="js-todo-new todo-new input-symbol">
-          <input type="text" placeholder={{_ 'Type to add new tasks'}}>
-          <span class="icon-add js-todo-add"></span>
-        </form>
       </nav>
 
 
@@ -42,24 +21,20 @@
         <div class="container"> 
           <div class="custom-calendar-wrap custom-calendar-full">
             <div class="custom-header clearfix">
-              <h2>Flexible Calendar</h2>
               <h3 class="custom-month-year">
                 <span id="custom-month" class="custom-month"></span>
                 <span id="custom-year" class="custom-year"></span>
-                <nav>
+                <div>
                   <span id="custom-prev" class="custom-prev"></span>
                   <span id="custom-next" class="custom-next"></span>
                   <span id="custom-current" class="custom-current" title="Got to current date"></span>
-                </nav>
+                </div>
               </h3>
             </div>
             <div id="calendar" class="fc-calendar-container"></div>
           </div>
-        </div><!-- /container -->
+        </div>
 
       </div>
     </div>
-  {{else}}
-    {{> pleaseLogin }}
-  {{/if}}
 </template>
